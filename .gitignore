@@ -1,6 +1,6 @@
 # Visual Studio Code 
 .vscode
-.code-workspace
+Django4-CustomUsers.code-workspace
 
 # Django #
 *.log

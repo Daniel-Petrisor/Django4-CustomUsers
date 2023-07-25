@@ -1,3 +1,11 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+
+# Pagina di registrazione
+def register(request):
+    return HttpResponse("Pagina di registrazione")
+
+# Pagina di accesso
+def login(request):
+    return HttpResponse("Pagina di accesso")

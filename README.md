@@ -50,7 +50,7 @@ https://www.python.org/downloads/release/python-3910/
     - `python manage.py runserver`
 
 1. Visita `http://127.0.0.1:8000/`
-**Hai avviato il server di sviluppo Django**
+    **Hai avviato il server di sviluppo Django**
 
 https://docs.djangoproject.com/it/4.2/intro/tutorial01/
 
@@ -59,7 +59,53 @@ https://docs.djangoproject.com/it/4.2/intro/tutorial01/
 1.  Assicurati di essere nella stessa cartella di manage.py
     `D://DjangoProjects/mysite`
 
-1   Crea una nuova applicazione "accounts", usa il comando
+1.  Crea una nuova applicazione "accounts", usa il comando
     - `python manage.py startapp accounts`
 
-1. Modifica le impostazioni nel file `settings.py` del tuo progetto per collegarti al database.
+1. Apri il file accounts/views.py e scrivi il seguente codice
+    `
+    from django.shortcuts import render
+    from django.http import HttpResponse
+
+    # Pagina di registrazione
+    def register(request):
+    return HttpResponse("Pagina di registrazione")
+
+    # Pagina di accesso
+    def login(request):
+    return HttpResponse("Pagina di accesso")
+    `
+
+1. Crea il file urls.py all'interno dell'applicazione "accounts" e includi il seguente codice
+    `
+    from django.urls import path
+    from . import views
+
+    urlpatterns = [
+        # Pagina di registrazione
+        path('register/', views.register, name='register'),
+
+         # Pagina di accesso
+        path('login/', views.login, name='login'),
+    ]
+    
+    `
+
+1. In mysite/urls.py, aggiungi seguente codice
+    `
+    from django.contrib import admin
+    from django.urls import path, include
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path("", include("accounts.urls")),
+    ]
+
+    `
+1. Esegui il server per assicurarti che funzioni
+    - `python manage.py runserver`
+
+1. Visita `http://127.0.0.1:8000/register/`
+    **Pagina di registrazione**
+1. Visita `http://127.0.0.1:8000/login/`
+    **Pagina di accesso**
