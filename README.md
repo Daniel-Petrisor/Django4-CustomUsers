@@ -53,3 +53,13 @@ https://www.python.org/downloads/release/python-3910/
 **Hai avviato il server di sviluppo Django**
 
 https://docs.djangoproject.com/it/4.2/intro/tutorial01/
+
+
+## 3. Creazione dell'applicazione Accounts:
+1.  Assicurati di essere nella stessa cartella di manage.py
+    `D://DjangoProjects/mysite`
+
+1   Crea una nuova applicazione "accounts", usa il comando
+    - `python manage.py startapp accounts`
+
+1. Modifica le impostazioni nel file `settings.py` del tuo progetto per collegarti al database.
